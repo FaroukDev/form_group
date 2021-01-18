@@ -17,27 +17,27 @@ let my_list = document.querySelector("#my_p");
 
 
 function addToList(){
-let nb_groups = 3;
+let nb_groups = 5;
 let nbr_per_group = document.getElementById("input_group").value
 
 while (names.length >= nbr_per_group){
     const result = new Array(Math.ceil(names.length / nbr_per_group))
         .fill()
-        .map(_ => names.splice(0, nb_groups))
+        .map(_ => names.splice(0, nbr_per_group))
         console.log(result);
         let my_group = document.querySelector(".group")
         for(let i = 0; i <  result.length; i++){
-            my_list.innerText += result[i] + "\n";
+            my_list.innerText +=  "Voici le groupe : " + result[i] + "\n";
         }
         
-        //for(i = 0; i < names.length; i++){
-        //    i.remove(names) 
-        //   console.log("il reste=", names)
-        //{ break; }
-    //}
     
 }
 
 
+}
+
+function removeGroup(){
+    let group = document.getElementById("#remove_group");
+    my_list.remove();
 }
 
