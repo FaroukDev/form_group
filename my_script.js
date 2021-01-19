@@ -26,10 +26,14 @@ function addToList() {
         console.log(result);
         let my_group = document.querySelector(".group")
         for (let i = 0; i < result.length; i++) {
-            my_list.innerText += "Voici le groupe de : " + result[i] + "\n";
+            my_list.innerText += "Here is the group of => " + result[i] + "\n";
         }
+        localStorage["newArray"] = JSON.stringify(newArray);
 
+        // Retrieve
+        var stored_datas = JSON.parse(localStorage["newArray"]);
 
+        console.log(newArray);
     }
 
 
